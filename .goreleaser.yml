@@ -40,18 +40,24 @@ archives:
       - sensuctl
     format: tar.gz
     name_template: "sensuctl_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    replacements:
+      darwin: macOS
   -
     id: sensu-backend
     builds:
       - sensu-backend
     format: tar.gz
     name_template: "sensu-backend_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    replacements:
+      darwin: macOS
   -
     id: sensu-agent
     builds:
       - sensu-agent
     format: tar.gz
     name_template: "sensu-agent_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    replacements:
+      darwin: macOS
 
 checksum:
   name_template: 'checksums.txt'
