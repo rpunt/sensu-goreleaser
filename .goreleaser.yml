@@ -1,0 +1,48 @@
+# https://goreleaser.com/customization/build/
+builds:
+  -
+    id: "sensuctl"
+    dir: sensu-go
+    main: ./cmd/sensuctl
+    binary: sensuctl
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    goarm:
+      - 7
+    ignore:
+      - goos: linux
+        goarch: arm64
+  -
+    id: "sensu-backend"
+    dir: sensu-go
+    main: ./cmd/sensu-backend
+    binary: sensu-backend
+    targets:
+      - linux_amd64
+  -
+    id: "sensu-agent"
+    dir: sensu-go
+    main: ./cmd/sensu-agent
+    binary: sensu-agent
+    goos:
+      - windows
+      - linux
+    goarch:
+      - amd64
+
+# https://goreleaser.com/customization/archive/
+archives:
+  -
+    id: sensuctl
+    format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
