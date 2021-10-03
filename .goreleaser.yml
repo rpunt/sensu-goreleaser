@@ -36,14 +36,20 @@ builds:
 archives:
   -
     id: sensuctl
+    builds:
+      - sensuctl
     format: tar.gz
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   -
     id: sensu-backend
+    builds:
+      - sensu-backend
     format: tar.gz
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   -
     id: sensu-agent
+    builds:
+      - sensu-agent
     format: tar.gz
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
