@@ -39,19 +39,19 @@ archives:
     builds:
       - sensuctl
     format: tar.gz
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "sensuctl_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   -
     id: sensu-backend
     builds:
       - sensu-backend
     format: tar.gz
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "sensu-backend_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   -
     id: sensu-agent
     builds:
       - sensu-agent
     format: tar.gz
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "sensu-agent_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 checksum:
   name_template: 'checksums.txt'
