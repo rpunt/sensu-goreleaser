@@ -28,11 +28,9 @@ builds:
     dir: sensu-go
     main: ./cmd/sensu-agent
     binary: sensu-agent
-    goos:
-      - windows
-      - linux
-    goarch:
-      - amd64
+    targets:
+      - windows_amd64
+      - linux_amd64
 
 # https://goreleaser.com/customization/archive/
 archives:
